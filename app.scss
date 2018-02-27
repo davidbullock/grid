@@ -1,0 +1,291 @@
+@import "bourbon"; // for media query support
+@import "neat"; // for media query support
+
+//== Media Queries
+
+// Breakpoints
+
+$break-tablet-min:                              768px;
+$break-tablet-max:                              959px;
+$break-desktop-min:                             960px;
+$break-desktop-max:                             1199px;
+$break-desktop-large-min:                       1200px;
+
+$tablet:                                        new-breakpoint(min-width $break-tablet-min max-width $break-tablet-max); // tablet only
+$tablet-desktop:                                new-breakpoint(min-width $break-tablet-min); // tablet and above
+$desktop:                                       new-breakpoint(min-width $break-desktop-min); // desktop and above
+
+* {
+  box-sizing: border-box;
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+@mixin clear {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Grid variables
+$base-unit: 8px;
+
+$grid-pad-mobile: ($base-unit * 2);
+$grid-pad-tablet: ($base-unit * 3);
+$grid-pad-desktop: ($base-unit * 4);
+
+$grid-background-colour: white;
+$grid-border: thin solid grey;
+
+[class*='o-grid__col'] {
+  width: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+  float: left;
+  display: flex;
+  flex: 1 1 100%;
+}
+
+// Grid BEM
+
+// .o-grid - block is an object, do not style
+.o-grid {
+  @include clear;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  
+  margin: 0 0 $grid-pad-mobile 0;
+  
+  @include media($tablet) {
+    margin: 0 0 $grid-pad-tablet 0;
+  }
+  
+  @include media($desktop) {
+    margin: 0 0 $grid-pad-desktop 0;
+  }
+  
+  &:before,
+  &:after {
+      width: 0; // Safari flexbox fix
+  }
+  
+  // .o-grid__col - element is an object, do not style
+  
+  @include media($tablet-desktop) {
+    // .o-grid__col-1-1
+    &__col-1-1 {
+      width: 100%;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    // .o-grid__col-2-3
+    &__col-2-3 {
+      width: ((100% / 3) * 2);
+      flex-basis: ((100% / 3) * 2);
+      max-width: ((100% / 3) * 2);
+    }
+    // .o-grid__col-1-3
+    &__col-1-3 {
+      width: (100% / 3);
+      flex-basis: (100% / 3);
+      max-width: (100% / 3);
+    }
+    // .o-grid__col-1-2
+    &__col-1-2 {
+      width: (100% / 2);
+      flex-basis: (100% / 2);
+      max-width: (100% / 2);
+    }
+    // .o-grid__col-1-4
+    &__col-1-4 {
+      width: (100% / 4);
+      flex-basis: (100% / 4);
+      max-width: (100% / 4);
+    }
+    // .o-grid__col-1-5
+    &__col-1-5 {
+      width: (100% / 5);
+      flex-basis: (100% / 5);
+      max-width: (100% / 5);
+    }
+    // .o-grid__col-1-8
+    &__col-1-6 {
+      width: (100% / 6);
+      flex-basis: (100% / 6);
+      max-width: (100% / 6);
+    }
+    // .o-grid__col-1-8
+    &__col-1-8 {
+      width: (100% / 8);
+      flex-basis: (100% / 8);
+      max-width: (100% / 8);
+    }
+    // .o-grid__col-1-12
+    &__col-1-12 {
+      width: (100% / 12);
+      flex-basis: (100% / 12);
+      max-width: (100% / 12);
+    }
+  }
+  
+  // .o-grid--pad - modifier class - add styles and additional padding here
+  &--pad {
+    background: $grid-background-colour;
+    padding: $grid-pad-mobile 0 0 $grid-pad-mobile;
+    
+    @include media($tablet) {
+      padding: $grid-pad-tablet 0 0 $grid-pad-tablet;
+    }
+    
+    @include media($desktop) {
+      padding: $grid-pad-desktop 0 0 $grid-pad-desktop;
+    }
+
+    [class*='o-grid__col'] {
+      padding-right: $grid-pad-mobile;
+      padding-bottom: $grid-pad-mobile;
+      
+      @include media($tablet) {
+        padding-right: $grid-pad-tablet;
+        padding-bottom: $grid-pad-tablet;
+      }
+      
+      @include media($desktop) {
+        padding-right: $grid-pad-desktop;
+        padding-bottom: $grid-pad-desktop;
+      }
+    }
+  }
+  
+  &--pad-off {
+    padding: 0;
+
+    // SASS won't compile short hand here e.g. margin: 0 0 0 -$grid-pad;
+    margin: 0;
+    margin-left: -$grid-pad-mobile;
+    
+    @include media($tablet) {
+      margin-left: -$grid-pad-tablet;
+    }
+    
+    @include media($desktop) {
+      margin-left: -$grid-pad-desktop;
+    }
+
+    [class*='o-grid__col'] {
+      padding-left: $grid-pad-mobile;
+      padding-bottom: $grid-pad-mobile;
+      list-style: none;
+      
+      @include media($tablet) {
+        padding-left: $grid-pad-tablet;
+        padding-bottom: $grid-pad-tablet;
+      }
+      
+      @include media($desktop) {
+        padding-left: $grid-pad-desktop;
+        padding-bottom: $grid-pad-desktop;
+      }
+    }
+  }
+  
+  // .o-grid--line - modifier class - it is best to not add padding here, but on the elements / items within
+  &--line {
+    border-top: $grid-border;
+    border-left: $grid-border;
+    
+    [class*='o-grid__col'] {
+      border-right: $grid-border;
+      border-bottom: $grid-border;
+    }
+  }
+}
+
+
+// Grid items - component / module
+// .c-module
+.c-module {
+  padding: $grid-pad-mobile;
+  background: #eee;
+  width: 100%;
+  
+  @include media($tablet) {
+    padding: $grid-pad-tablet;
+  }
+  
+  @include media($desktop) {
+    padding: $grid-pad-desktop;
+  }
+  
+  // .c-module__inner - add styles and padding to this element
+  &__inner {
+    background: grey;
+    height: 100%;
+    padding: $grid-pad-mobile;
+    
+    @include media($tablet) {
+      padding: $grid-pad-tablet;
+    }
+    
+    @include media($desktop) {
+      padding: $grid-pad-desktop;
+    }
+  }
+  
+  &--small {
+    padding: ($grid-pad-mobile / 2);
+    
+    @include media($tablet) {
+      padding: ($grid-pad-tablet / 2);
+    }
+
+    @include media($desktop) {
+      padding: ($grid-pad-desktop / 2);
+    }
+  }
+  
+  p {
+    margin: 0;
+  }
+}
+
+// Container - object
+.o-container {
+  padding: $grid-pad-mobile;
+  
+  @include media($tablet) {
+    padding: $grid-pad-tablet;
+  }
+
+  @include media($desktop) {
+    padding: $grid-pad-desktop;
+  }
+}
+
+// Base
+body {
+  background-color: #ccc;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  // font-size: ($base-unit * 2);
+}
+
+h2, h3, h4 {
+  margin: 0 0 1em;
+}
+
+p {
+  margin: 0 0 1em;
+}
