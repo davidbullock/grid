@@ -1,5 +1,11 @@
 # Grid
 
+<p align="center">
+  <a href="https://github.com/davidbullock/grid/">
+    <img src="grid.png">
+  </a>
+</p>
+
 Grid - Float method, with flexbox progressive enhancement. No need to add rows. Just a grid parent, grid children, and a modifier class on the parent to control the behaviour of the children nested within.
 
 https://davidbullock.github.io/grid/
@@ -7,6 +13,12 @@ https://davidbullock.github.io/grid/
 or
 
 https://codepen.io/serkai/pen/EoPoEd
+
+<p align="center">
+  <a href="https://github.com/davidbullock/grid/">
+    <img src="grid.jpg">
+  </a>
+</p>
 
 ## Key take away for grid - don't overthink it
 
