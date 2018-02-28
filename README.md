@@ -19,7 +19,7 @@ As a designer or developer, there are simple requirements to get your layout up 
 
 Try to style the component only within the nested grid child, I've added $grid-background-colour for demo purposes - try to work that into your design system respectively.
 
-To modify the behaviour of the grid, add 
+To modify the behaviour of the grid, add a modifier class to the grid parent:
 
 Default - no gutter / padding
 `o-grid`
