@@ -15,27 +15,6 @@ $tablet:                                        new-breakpoint(min-width $break-
 $tablet-desktop:                                new-breakpoint(min-width $break-tablet-min); // tablet and above
 $desktop:                                       new-breakpoint(min-width $break-desktop-min); // desktop and above
 
-* {
-  box-sizing: border-box;
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
-}
-
-@mixin clear {
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    line-height: 0;
-  }
-
-  &:after {
-    clear: both;
-  }
-}
-
 // Grid variables
 $base-unit: 8px;
 
