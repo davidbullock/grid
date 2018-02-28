@@ -19,9 +19,50 @@ As a designer or developer, there are simple requirements to get your layout up 
 
 Try to style the component only within the nested grid child, I've added $grid-background-colour for demo purposes - try to work that into your design system respectively.
 
+To modify the behaviour of the grid, add 
+
+Default - no gutter / padding
+`o-grid`
+
+Gutter / padding in between grid children / columns only
+`o-grid o-grid--pad-off`
+
+Gutter padding all around the the grid children / columns
+`o-grid o-grid--pad-off`
+
+Thin line around the grid children / columns
+`o-grid o-grid--line`
+
 #### Work with fractions
 
-12 column grid makes sense, and grid supports that. Fractions are even simpler, e.g. "this section element will be two thirds, this aside element will be one third". Easy right? So the classes are based on that to keep things nice and simple. Give the grid child / column a fraction class `..1-3` `..1-2` `..2-3`.
+12 column grid makes sense, and grid supports that. Fractions are even simpler, e.g. "this section element will be two thirds, this aside element will be one third". Easy right? So the classes are based on that to keep things nice and simple. Give the grid child / column a fraction class: 
+
+1/1
+`o-grid__col-1-1`
+
+2/3
+`o-grid__col-2-3`
+
+1/2
+`o-grid__col-1-2`
+
+1/3
+`o-grid__col-1-3` 
+
+1/4
+`o-grid__col-1-4`
+
+1/5
+`o-grid__col-1-5`
+
+1/6
+`o-grid__col-1-6`
+
+1/8
+`o-grid__col-1-8`
+
+1/12
+`o-grid__col-1-12`
 
 ##### Flexbox progressive enhancement
 
