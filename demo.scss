@@ -1,0 +1,76 @@
+// Grid items - component / module
+// .c-module
+.c-module {
+  padding: $grid-pad-mobile;
+  background: #eee;
+  width: 100%;
+  
+  @include media($tablet) {
+    padding: $grid-pad-tablet;
+  }
+  
+  @include media($desktop) {
+    padding: $grid-pad-desktop;
+  }
+  
+  // .c-module__inner - add styles and padding to this element
+  &__inner {
+    background: grey;
+    height: 100%;
+    padding: $grid-pad-mobile;
+    
+    @include media($tablet) {
+      padding: $grid-pad-tablet;
+    }
+    
+    @include media($desktop) {
+      padding: $grid-pad-desktop;
+    }
+  }
+  
+  &--small {
+    padding: ($grid-pad-mobile / 2);
+    
+    @include media($tablet) {
+      padding: ($grid-pad-tablet / 2);
+    }
+
+    @include media($desktop) {
+      padding: ($grid-pad-desktop / 2);
+    }
+  }
+  
+  p {
+    margin: 0;
+  }
+}
+
+// Container - object
+.o-container {
+  padding: $grid-pad-mobile;
+  
+  @include media($tablet) {
+    padding: $grid-pad-tablet;
+  }
+
+  @include media($desktop) {
+    padding: $grid-pad-desktop;
+  }
+}
+
+// Base
+body {
+  background-color: #ccc;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  // font-size: ($base-unit * 2);
+}
+
+h2, h3, h4 {
+  margin: 0 0 1em;
+}
+
+p {
+  margin: 0 0 1em;
+}
