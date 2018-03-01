@@ -33,7 +33,7 @@
 .o-grid:after {
   clear: both;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .o-grid {
     margin: 0 0 24px 0;
   }
@@ -46,7 +46,7 @@
 .o-grid:before, .o-grid:after {
   width: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .o-grid__col-1-1 {
     width: 100%;
     -ms-flex-preferred-size: 100%;
@@ -106,7 +106,7 @@
   background: white;
   padding: 16px 0 0 16px;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .o-grid--pad {
     padding: 24px 0 0 24px;
   }
@@ -120,7 +120,7 @@
   padding-right: 16px;
   padding-bottom: 16px;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .o-grid--pad [class*='o-grid__col'] {
     padding-right: 24px;
     padding-bottom: 24px;
@@ -137,7 +137,7 @@
   margin: 0;
   margin-left: -16px;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .o-grid--pad-off {
     margin-left: -24px;
   }
@@ -152,7 +152,7 @@
   padding-bottom: 16px;
   list-style: none;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .o-grid--pad-off [class*='o-grid__col'] {
     padding-left: 24px;
     padding-bottom: 24px;
