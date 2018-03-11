@@ -23,7 +23,7 @@ html {
   background: #eee;
   width: 100%;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .c-module {
     padding: 24px;
   }
@@ -38,7 +38,7 @@ html {
   height: 100%;
   padding: 16px;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .c-module__inner {
     padding: 24px;
   }
@@ -51,7 +51,7 @@ html {
 .c-module--small {
   padding: 8px;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .c-module--small {
     padding: 12px;
   }
@@ -68,7 +68,7 @@ html {
 .o-container {
   padding: 16px;
 }
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .o-container {
     padding: 24px;
   }
